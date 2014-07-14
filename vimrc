@@ -85,8 +85,8 @@ set ttimeoutlen=10
 nnoremap <Up> :<Up>
 nnoremap <Down> /<Up>
 
-inoremap <C-j> <ESC>/<++><CR>cf>
-nnoremap <C-j> /<++><CR>cf>
+inoremap <C-j> <ESC>/<++><CR>"_cf>
+nnoremap <C-j> /<++><CR>"_cf>
 
 inoremap <C-H> <C-G>u<C-H>
 
