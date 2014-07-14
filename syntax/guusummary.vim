@@ -19,9 +19,13 @@ highlight guuArgument ctermfg=Red
 nnoremap <buffer> <LocalLeader>a a\a\|\|a\<++><ESC>6hi
 
 syntax region guuFunction oneline matchgroup=Comment concealends
-  \ start='\\u|' end='|u\\' contains=@NoSpell
+  \ start='\\u|' end='|u\\'
+  \ contains=@NoSpell,guuFunctionArgument
 highlight guuFunction ctermfg=Black ctermbg=White
 nnoremap <buffer> <LocalLeader>u a\u\|\|u\<++><ESC>6hi
+syntax region guuFunctionArgument oneline matchgroup=Comment concealends
+  \ contained start='\\a|' end='|a\\' contains=@NoSpell
+highlight guuFunctionArgument ctermbg=White ctermfg=Red
 
 syntax region guuFile oneline matchgroup=Comment concealends
   \ start='\\f|' end='|f\\' contains=@NoSpell
@@ -63,4 +67,3 @@ nnoremap <buffer> <LocalLeader>s a\s\|\|s\<++><ESC>6hi
 syntax region guuTag oneline matchgroup=Comment concealends conceal
   \ start=/\\tag|/ end=/|tag\\/ contains=@NoSpell
 highlight guuTag ctermfg=DarkMagenta
-"nnoremap <buffer> <LocalLeader>t a\tag\|\|tag\<++><ESC>8hi
