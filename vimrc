@@ -79,8 +79,12 @@ set whichwrap=
 " Map
 
 set notimeout
-set ttimeout
-set ttimeoutlen=10
+if has('gui_running')
+  set nottimeout
+else
+  set ttimeout
+  set ttimeoutlen=10
+endif
 
 nnoremap <Up> :<Up>
 nnoremap <Down> /<Up>
