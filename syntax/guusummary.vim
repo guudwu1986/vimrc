@@ -55,9 +55,12 @@ highlight guuOption ctermfg=Magenta
 nnoremap <buffer> <LocalLeader>o a\o\|\|o\<++><ESC>6hi
 
 syntax region guuVariable oneline matchgroup=Comment concealends
-  \ start='\\v|' end='|v\\' contains=@NoSpell
+  \ start='\\v|' end='|v\\' contains=@NoSpell,guuVariableArgument
 highlight guuVariable ctermfg=Black ctermbg=Green
 nnoremap <buffer> <LocalLeader>v a\v\|\|v\<++><ESC>6hi
+syntax region guuVariableArgument oneline matchgroup=Comment concealends
+  \ contained start='\\a|' end='|a\\' contains=@NoSpell
+highlight guuVariableArgument ctermbg=Green ctermfg=Red
 
 syntax region guuString oneline matchgroup=Comment concealends
   \ start='\\s|' end='|s\\' contains=@NoSpell,guuArgument
