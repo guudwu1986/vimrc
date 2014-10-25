@@ -97,3 +97,7 @@ inoremap <C-H> <C-G>u<C-H>
 " Trailing Blank Check
 
 autocmd BufWrite * %s/ \+$//e
+
+" TeX flavor
+
+let g:tex_flavor='latex'
